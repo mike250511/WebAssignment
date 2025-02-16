@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 
 function AiChatBot({ addBook }) {
   //constants
@@ -36,15 +35,15 @@ function AiChatBot({ addBook }) {
     }
   }
 
-  function initializeModel() {
-    if (apiKey.current) {
-      genAI.current = new GoogleGenerativeAI(apiKey.current);
-      model.current = genAI.current.getGenerativeModel({ model: "gemini-1.5-flash" });
-      console.log("Model initialized successfully");
-    } else {
-      console.error("API key is missing, cannot initialize model.");
-    }
-  }
+//   function initializeModel() {
+//     if (apiKey.current) {
+//       genAI.current = new GoogleGenerativeAI(apiKey.current);
+//       model.current = genAI.current.getGenerativeModel({ model: "gemini-1.5-flash" });
+//       console.log("Model initialized successfully");
+//     } else {
+//       console.error("API key is missing, cannot initialize model.");
+//     }
+//   }
 
   async function askChatBot(request) {
     if (!isApiKeyFetched) {
