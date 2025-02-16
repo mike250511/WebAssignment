@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { GoogleGenerativeAI } from '@google/generative-ai';
 import { db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
 
@@ -103,7 +102,7 @@ function AiChatBot({ addBook }) {
   function ruleChatBot(request) {
     if (request.startsWith("add book")) {
       let bookDetails = request.replace("add book", "").trim();
-      const bookRegex = /"([^"]+)" by ([a-zA-Z\s\.]+),\s*Genre:\s*([a-zA-Z\s]+)/i;
+      const bookRegex = /"([^"]+)" by ([a-zA-Z\s.]+),\s*Genre:\s*([a-zA-Z\s]+)/i;
       const match = bookDetails.match(bookRegex);
 
       if (match) {
