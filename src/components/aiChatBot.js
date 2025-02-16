@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { db } from '../firebase';
 import { getDoc, doc } from 'firebase/firestore';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 function AiChatBot({ addBook }) {
+  //constants
   const apiKey = useRef(null);
   const genAI = useRef(null);
   const model = useRef(null);
