@@ -14,12 +14,6 @@ function AiChatBot({ addBook }) {
     getApiKey();
   }, []);
 
-  useEffect(() => {
-    if (isApiKeyFetched) {
-      initializeModel(); 
-    }
-  }, [isApiKeyFetched]);
-
   async function getApiKey() {
     try {
       const snapshot = await getDoc(doc(db, "apikey", "googlegenai"));
