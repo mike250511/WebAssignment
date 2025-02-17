@@ -2,6 +2,7 @@
   "name": "booklog",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://mike250511.github.io/WebAssignment",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "firebase": "^11.3.1",
